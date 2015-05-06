@@ -1,0 +1,25 @@
+.col-lg-10.center-block
+  %h1 Secciones
+  %table.table.table-bordered
+    %thead
+      %tr
+        %th Nombre
+        %th Enlace
+        %th Contenido
+        %th
+        %th
+        %th
+
+    %tbody
+      - @sections.each do |section|
+        %tr
+          %td= section.name
+          %td= section.slug
+          %td= truncate(strip_tags(section.content), :length=>100)
+          %td= link_to 'Show', section
+          %td= link_to 'Edit', edit_section_path(section)
+          %td= link_to 'Destroy', section, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+  %br
+
+  = link_to 'New Section', new_section_path

@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %title SIPANAB | Sindicato Panameño de Auxiliares de Abordo
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    %nav.navbar.navbar-default
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{'type' => "button", 'data-toggle' => "collapse", 'data-target' => "#bs-navbar-collapse" }
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to 'SIPANAB', root_url, class: 'navbar-brand'
+        .collapse.navbar-collapse#bs-navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            %li.dropdown
+              %a.dropdown-toggle{'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true"}
+                = fa_icon 'user'
+                Login
+                %span.caret
+              .dropdown-menu.login-navbar
+                %h3 Iniciar Sesión
+                = minimal_form_for :sessions, :url => sessions_path, html: { autocomplete: 'off' } do |f|
+                  = f.input :username, placeholder: 'Nombre de Usuario', input_html: { class: 'input-sm' }
+                  = f.input :password, placeholder: 'Contraseña...', input_html: { class: 'input-sm' }
+                  = f.button :submit, "Entrar", class: 'btn-warning btn-block'
+    .container
+      .navbar.navbar-default#section-navbar
+        .container
+          .navbar-header
+            %button.navbar-toggle.collapsed{'type' => "button", 'data-toggle' => "collapse", 'data-target' => "#section-navbar-collapse" }
+              %span.sr-only Toggle navigation
+              %span.icon-bar
+              %span.icon-bar
+              %span.icon-bar
+            .collapse.navbar-collapse#section-navbar-collapse
+              %ul.nav.navbar-nav.navbar-right
+                - @sections.each do |section|
+                  %li
+                    = link_to section.name.titleize, section
+      = yield
