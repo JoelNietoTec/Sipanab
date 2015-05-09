@@ -5,20 +5,24 @@ class ArticlesController < ApplicationController
   # GET /articles.json
   def index
     @articles = Article.all
+    @title = 'Artículos'
   end
 
   # GET /articles/1
   # GET /articles/1.json
   def show
+    @title = @article.title.titleize
   end
 
   # GET /articles/new
   def new
     @article = Article.new
+    @title = 'Nuevo Artículo'
   end
 
   # GET /articles/1/edit
   def edit
+    @title = 'Editando ' + @article.title.titleize
   end
 
   # POST /articles
@@ -69,6 +73,6 @@ class ArticlesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
-      params.require(:article).permit(:title, :content, :slug, :tags, :user_id, :important, :bootsy_image_gallery_id)
+      params.require(:article).permit(:title, :content, :slug, :tag_list, :user_id, :important, :bootsy_image_gallery_id)
     end
 end

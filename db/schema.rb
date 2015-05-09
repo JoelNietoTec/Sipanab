@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150506044542) do
+ActiveRecord::Schema.define(version: 20150507171351) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -39,6 +39,13 @@ ActiveRecord::Schema.define(version: 20150506044542) do
     t.integer  "image_gallery_id", limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "documents", force: :cascade do |t|
+    t.string   "doc_file",    limit: 255
+    t.string   "description", limit: 255
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -93,6 +100,14 @@ ActiveRecord::Schema.define(version: 20150506044542) do
   end
 
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+
+  create_table "wallpapers", force: :cascade do |t|
+    t.string   "title",      limit: 255
+    t.text     "content",    limit: 65535
+    t.string   "image",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   add_foreign_key "articles", "users"
 end

@@ -4,7 +4,7 @@
   .form-inputs
     = f.input :title
     = f.input :content, as: :bootsy
-    = f.input :tags
+    = f.input :tag_list, input_html: { data:{ role:'tagsinput' }, value: @article.tag_list.join(",") }, placeholder: 'Etiquetas separadas por coma...'
     = f.association :user
     = f.input :important
 

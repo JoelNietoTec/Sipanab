@@ -20,6 +20,10 @@
   float: none !important;
 }
 
+body {
+  background-image: url('/assets/whitediamond.png');
+}
+
 .login-navbar {
   padding: 10px 25px 25px 25px;
   min-width: 250px;
@@ -32,4 +36,47 @@
 
 textarea {
   min-height: 350px;
+}
+
+.main-container {
+  background-color: #fff;
+}
+
+.navbar-nav > li > a.facebook {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navbar-nav > li > a.facebook:hover {
+  background-color: #3030cb;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.navbar-nav > li > a.twitter {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+}
+
+.navbar-nav > li > a.twitter:hover {
+  background-color: #1ac3f5;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.content {
+  margin: 25px;
+}
+
+.content-title {
+  border-bottom: 1px solid #4a4a4a;
+  margin-bottom: 25px;
+  padding: 15px;
 }

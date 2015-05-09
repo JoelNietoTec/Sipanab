@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @wallpaper.title
+%p
+  %b Content:
+  = @wallpaper.content
+%p
+  %b Image:
+  = @wallpaper.image
+
+= link_to 'Edit', edit_wallpaper_path(@wallpaper)
+\|
+= link_to 'Back', wallpapers_path

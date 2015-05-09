@@ -1,0 +1,12 @@
+.center-block.col-lg-8.panel
+  .panel-body
+    = simple_form_for(@user) do |f|
+      = f.error_notification
+
+      .form-inputs
+        = f.input :username
+        = f.input :password
+        = f.input :password_confirmation
+
+      .form-actions
+        = f.button :submit

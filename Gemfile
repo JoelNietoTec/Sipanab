@@ -55,8 +55,6 @@ gem 'simple_form'
 
 gem 'friendly_id', '~> 5.1.0'
 
-gem 'bootstrap-wysihtml5-rails'
-
 gem 'bootsy'
 
 gem 'carrierwave'

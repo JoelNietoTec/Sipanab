@@ -9,18 +9,14 @@ class SessionsController < ApplicationController
 
   def create
     if @user
-      if @user.is_candidate?
-        redirect_to root_url, :flash => { :success => "Bienvenido!" }
-      elsif @user.is_company
-        redirect_to company_root_url, :success => 'Bienvenido'
-      end
+      redirect_to admin_path, :flash => { :success => "Login!" }
     else
       redirect_to :back, :alert => 'Email y/o password incorrectos'
     end
   end
   def destroy
     logout
-    redirect_to root_url, :notice => 'Sesión Finalizada'
+    redirect_to root_url, :notice => 'Logout!'
   end
 
   private
