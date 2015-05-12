@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
 
   def create
     if @user
-      redirect_to admin_path, :flash => { :success => "Login!" }
+      redirect_to :back, :flash => { :success => "Login!" }
     else
       redirect_to :back, :alert => 'Email y/o password incorrectos'
     end

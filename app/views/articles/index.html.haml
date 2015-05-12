@@ -1,31 +1,21 @@
-%h1 Listing articles
+.col-lg-10.center-block.articles
+  .panel
+    .panel-body
+      %h1.text-warning Artículos
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th Slug
-      %th Tags
-      %th User
-      %th Important
-      %th
-      %th
-      %th
+  = link_to 'Nuevo Artículo', new_article_path, :class => 'btn btn-sm btn-warning' if current_user
 
-  %tbody
-    - @articles.each do |article|
-      %tr
-        %td= article.title
-        %td= article.content
-        %td= article.slug
-        %td= article.tags
-        %td= article.user
-        %td= article.important
-        %td= link_to 'Show', article
-        %td= link_to 'Edit', edit_article_path(article)
-        %td= link_to 'Destroy', article, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Article', new_article_path
+  - @articles.each do |article|
+    .panel
+      .panel-body
+        %h2.text-warning= article.title
+        %p
+          = truncate(strip_tags(article.content), :length => 200)
+          = link_to 'Ver Más', article, :class => 'btn btn-sm btn-warning'
+      .panel-footer
+        %p.text-warning
+          = fa_icon 'tags'
+          - article.tag_list.each do |tag|
+            = link_to tag_path(tag) do
+              %span.label.label-warning
+                = tag

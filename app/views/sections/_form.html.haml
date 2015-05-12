@@ -1,9 +1,8 @@
-.col-lg-10.center-block
-  = simple_form_for(@section) do |f|
-    = f.error_notification
-    .form-inputs
-      = f.input :name, label: 'Nombre'
-      = f.input :content, as: :bootsy, label: 'Contenido'
+= simple_form_for(@section) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, label: 'Nombre'
+    = f.input :content, as: :bootsy, label: 'Contenido'
 
-    .form-action
-      = f.button :submit
+  .form-action
+    = f.button :submit

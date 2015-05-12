@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:300italic,400italic,700italic,400,300,700");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700");
 /*!
  * bootswatch v3.3.4+1
  * Homepage: http://bootswatch.com
@@ -1084,7 +1084,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.4;
   color: #222222;
@@ -1186,7 +1186,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   line-height: 1.1;
   color: inherit;
@@ -2999,7 +2999,7 @@ select[multiple].form-group-lg .form-control {
   padding: 8px 12px;
   font-size: 15px;
   line-height: 1.4;
-  border-radius: 0;
+  border-radius: 4px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -3353,7 +3353,7 @@ fieldset[disabled] .btn-link:focus {
   padding: 8px 12px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 0;
+  border-radius: 4px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
@@ -4743,8 +4743,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 .label {
   display: inline-block;
   padding: .2em .6em .3em;
-  font-size: 75%;
   font-weight: bold;
+  font-size: 75%;
   line-height: 1;
   color: #ffffff;
   text-align: center;
@@ -4858,6 +4858,7 @@ a.badge:focus {
   margin-bottom: 30px;
   color: inherit;
   background-color: #fafafa;
+  border-radius: 7px;
 }
 
 .jumbotron p {
@@ -4868,10 +4869,7 @@ a.badge:focus {
 .jumbotron > hr {
   border-top-color: #e1e1e1;
 }
-.container .jumbotron,
-.container-fluid .jumbotron {
-  border-radius: 0;
-}
+
 .jumbotron .container {
   max-width: 100%;
 }
@@ -5303,8 +5301,8 @@ a.list-group-item-danger.active:focus {
   margin-bottom: 21px;
   background-color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 0;
-  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
 .panel-body {
@@ -5839,7 +5837,7 @@ button.close {
   position: absolute;
   z-index: 1070;
   display: block;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   font-weight: normal;
   line-height: 1.4;
@@ -5946,7 +5944,7 @@ button.close {
   display: none;
   max-width: 276px;
   padding: 1px;
-  font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 15px;
   font-weight: normal;
   line-height: 1.4;
@@ -6834,8 +6832,9 @@ input[type="checkbox"] {
 .label {
   padding-left: 1em;
   padding-right: 1em;
-  border-radius: 0;
+  border-radius: 3px;
   font-weight: 300;
+  margin: 2.5px;
 }
 .label-default {
   background-color: #e7e7e7;

@@ -14,4 +14,4 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require bootsy
-//= require_tree .
+//= require_tree ./shared

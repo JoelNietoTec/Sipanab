@@ -4,8 +4,13 @@ class ArticlesController < ApplicationController
   # GET /articles
   # GET /articles.json
   def index
-    @articles = Article.all
-    @title = 'Artículos'
+    if params[:tag]
+      @articles = Article.tagged_with(params[:tag]).order(created_at: :desc)
+      @title = 'Artículos etiquetados en ' + params[:tag]
+    else
+      @articles = Article.order(created_at: :desc)
+      @title = 'Artículos'
+    end
   end
 
   # GET /articles/1

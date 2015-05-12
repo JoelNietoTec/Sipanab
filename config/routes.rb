@@ -7,16 +7,19 @@ Rails.application.routes.draw do
   get 'admin/index'
 
   resources :wallpapers
+
   resources :users
-  resources :articles
+
+  resources :articles, :path => :articulos
+
   mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-  resources :sections
+
+  resources :sections, :path => :secciones
+
   get 'welcome/index'
 
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  get 'articulos/tags/:tag', to: 'articles#index', as: :tag
 
-  # You can have the root of your site routed with "root"
   root 'welcome#index'
 
   resources :sessions

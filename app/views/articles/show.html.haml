@@ -7,7 +7,8 @@
           Editar
 
     - @article.tag_list.each do |tag|
-      %span.label.label-warning
-        = tag
+      = link_to tag_path(tag) do
+        %span.label.label-warning
+          = tag
     .content
       = @article.content.html_safe

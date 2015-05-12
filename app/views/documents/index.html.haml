@@ -14,7 +14,7 @@
           - @documents.each do |document|
             %tr
               %td
-                = link_to document.doc_file.url
+                = link_to File.basename(document.doc_file.path), document.doc_file.url
               %td= document.description
               %td= link_to 'Show', document
               %td= link_to 'Edit', edit_document_path(document)
