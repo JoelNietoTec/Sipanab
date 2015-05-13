@@ -5,5 +5,7 @@ class WelcomeController < ApplicationController
     @articles = Article.order(created_at: :desc)
 
     @wallpapers = Wallpaper.all
+
+    @documents = Document.order(created_at: :desc).limit(10)
   end
 end

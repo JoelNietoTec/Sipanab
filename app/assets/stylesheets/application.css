@@ -80,3 +80,8 @@ textarea {
   margin-bottom: 25px;
   padding: 15px;
 }
+
+
+.centered {
+  text-align: center;
+}

@@ -1,14 +1,12 @@
 .container
   .document-container
-    %h1 Documentos
+    %h3 Documentos
     .col-lg-8.center-block
       %table.table.table-bordered
         %thead
           %tr
-            %th Doc file
-            %th Description
-            %th
-            %th
+            %th Documento
+            %th Descripción
             %th
         %tbody
           - @documents.each do |document|
@@ -16,8 +14,12 @@
               %td
                 = link_to File.basename(document.doc_file.path), document.doc_file.url
               %td= document.description
-              %td= link_to 'Show', document
-              %td= link_to 'Edit', edit_document_path(document)
-              %td= link_to 'Destroy', document, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              %td.centered
+                = link_to edit_document_path(document), :class => 'btn btn-xs btn-primary' do
+                  = fa_icon 'pencil'
+                  Editar
+                = link_to document, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger' do
+                  = fa_icon 'times'
+                  Eliminar
 
     = link_to 'Agregar Documento', new_document_path, :class => 'btn btn-warning btn-sm'
