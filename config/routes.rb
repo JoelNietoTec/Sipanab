@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  resources :documents do
-    collection do
-      get :download
-    end
-  end
+  resources :links
+  resources :documents, :path => :documentos
+
   get 'admin/index'
 
   resources :wallpapers

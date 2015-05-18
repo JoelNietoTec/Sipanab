@@ -1,5 +1,6 @@
 class WallpapersController < ApplicationController
   before_action :set_wallpaper, only: [:show, :edit, :update, :destroy]
+  before_action :require_login
 
   # GET /wallpapers
   # GET /wallpapers.json

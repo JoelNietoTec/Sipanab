@@ -28,19 +28,27 @@
               %ul.nav.navbar-nav.navbar-right
                 - if current_user
                   %li.dropdown
-                    %a.dropdown-toggle{'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true"}
+                    %a.dropdown-toggle{ 'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true" }
                       = fa_icon 'dashboard'
                       Administración
                       %span.caret
-                    %ul.dropdown-menu{:role => 'menu'}
+                    %ul.dropdown-menu{ :role => 'menu' }
                       %li
                         = link_to new_article_path do
                           = fa_icon 'pencil'
                           Nuevo Artículo
                       %li
-                        = link_to admin_path do
-                          = fa_icon 'cogs'
-                          Panel
+                        = link_to wallpapers_path do
+                          = fa_icon 'file-image-o'
+                          Wallpapers
+                      %li
+                        = link_to sections_path do
+                          = fa_icon 'indent'
+                          Secciones
+                      %li
+                        = link_to documents_path do
+                          = fa_icon 'file-archive-o'
+                          Documentos
                       %li
                         = link_to users_path do
                           = fa_icon 'users'

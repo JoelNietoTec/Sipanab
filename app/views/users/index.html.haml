@@ -1,25 +1,23 @@
-%h1 Listing users
+.container
+  .user.col-lg-8.center-block
+    %h1 Usuarios
 
-%table
-  %thead
-    %tr
-      %th Username
-      %th Crypted password
-      %th Salt
-      %th
-      %th
-      %th
+    %table.table.table-hover.table-hover.table-condensed.table-bordered
+      %thead
+        %tr
+          %th.centered Usuario
+          %th.centered Contraseña
+          %th
+          %th
 
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.username
-        %td= user.crypted_password
-        %td= user.salt
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td.centered= user.username
+            %td.centered= '******'
+            %td.centered= link_to 'Editar', edit_user_path(user), :class => 'btn btn-primary btn-xs'
+            %td.centered= link_to 'Borrar', user, :class => 'btn btn-danger btn-xs', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%br
+    %br
 
-= link_to 'New User', new_user_path
+    = link_to 'Nuevo Usuario', new_user_path, :class => 'btn btn-warning'

@@ -1,12 +1,8 @@
-.center-block.col-lg-8.panel
-  .panel-body
-    = simple_form_for(@user) do |f|
-      = f.error_notification
-
-      .form-inputs
-        = f.input :username
-        = f.input :password
-        = f.input :password_confirmation
-
-      .form-actions
-        = f.button :submit
+= simple_form_for(@user) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :username, input_html: { placeholder: 'Usuario' }, label: 'Usuario'
+    = f.input :password, label: 'Contraseña', input_html: { placeholder: 'Nueva Contraseña' }
+    = f.input :password_confirmation, label: 'Confirmar Contraseña', input_html: { placeholder: 'Confirmar Nueva Contraseña' }
+  .form-actions
+    = f.button :submit

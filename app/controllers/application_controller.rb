@@ -10,4 +10,7 @@ class ApplicationController < ActionController::Base
     @sections = Section.all
   end
 
+
+
+
 end

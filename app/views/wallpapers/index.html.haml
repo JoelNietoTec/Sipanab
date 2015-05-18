@@ -1,25 +1,23 @@
-%h1 Listing wallpapers
+.container
+  .images.col-lg-12
+    .col-lg-12.center-block
+      %h1 Fondos de Cabecera
+      %table.table.table-bordered.table-hover.col-lg-10
+        %thead
+          %tr
+            %th Título
+            %th Contenido
+            %th Imagen
+            %th
+            %th
+        %tbody
+          - @wallpapers.each do |wallpaper|
+            %tr
+              %td= wallpaper.title
+              %td= truncate(strip_tags(wallpaper.content), :length => 100)
+              %td= image_tag wallpaper.image.url(:thumb), :class => 'thumbnail'
+              %td= link_to 'Editar', edit_wallpaper_path(wallpaper), :class => 'btn btn-sm btn-success'
+              %td= link_to 'Borrar', wallpaper, :class => 'btn btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-%table
-  %thead
-    %tr
-      %th Title
-      %th Content
-      %th Image
-      %th
-      %th
-      %th
-
-  %tbody
-    - @wallpapers.each do |wallpaper|
-      %tr
-        %td= wallpaper.title
-        %td= wallpaper.content
-        %td= wallpaper.image
-        %td= link_to 'Show', wallpaper
-        %td= link_to 'Edit', edit_wallpaper_path(wallpaper)
-        %td= link_to 'Destroy', wallpaper, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New Wallpaper', new_wallpaper_path
+      %br
+      = link_to 'New Wallpaper', new_wallpaper_path, :class => 'btn btn-sm btn-warning'

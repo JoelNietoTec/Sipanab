@@ -1,25 +1,21 @@
 .container
-  .document-container
+  .document-container.col-lg-12
     %h3 Documentos
-    .col-lg-8.center-block
-      %table.table.table-bordered
-        %thead
-          %tr
-            %th Documento
-            %th Descripción
-            %th
-        %tbody
-          - @documents.each do |document|
-            %tr
-              %td
-                = link_to File.basename(document.doc_file.path), document.doc_file.url
-              %td= document.description
-              %td.centered
-                = link_to edit_document_path(document), :class => 'btn btn-xs btn-primary' do
-                  = fa_icon 'pencil'
-                  Editar
-                = link_to document, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger' do
-                  = fa_icon 'times'
-                  Eliminar
-
-    = link_to 'Agregar Documento', new_document_path, :class => 'btn btn-warning btn-sm'
+    - @documents.each do |document|
+      .col-sm-3
+        .panel.panel-warning
+          .panel-heading
+            %p.panel-title
+              = fa_icon 'file-text-o'
+              = link_to File.basename(document.doc_file.path), document.doc_file.url
+          .panel-body
+            = document.description
+          - if current_user
+            .panel-footer
+              = link_to edit_document_path(document), :class => 'btn btn-xs btn-primary' do
+                = fa_icon 'pencil'
+                Editar
+              = link_to document, :method => :delete, :data => { :confirm => 'Are you sure?' }, :class => 'btn btn-xs btn-danger' do
+                = fa_icon 'times'
+                Borrar
+    = link_to('Agregar Documento', new_document_path, :class => 'btn btn-warning btn-sm') if current_user
