@@ -4,11 +4,13 @@ lock '3.1.0'
 set :application, 'Sipanab'
 set :repo_url, 'https://github.com/JoelNietoTec/Sipanab.git'
 
+set :linked_files, %w{config/database.yml config/secrets.yml}
+
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-#set :deploy_to, '/home/deploy/Sipanab'
+set :deploy_to, '/home/rails'
 
 # Default value for :scm is :git
 # set :scm, :git
