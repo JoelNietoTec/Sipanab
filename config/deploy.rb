@@ -11,6 +11,7 @@ set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/home/rails'
+set :default_env, { path: "~/.rbenv/shims:~/.rbenv/bin:$PATH" }
 
 # Default value for :scm is :git
 # set :scm, :git
