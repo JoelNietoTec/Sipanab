@@ -55,6 +55,8 @@ gem 'sorcery'
 
 gem 'haml'
 
+gem 'haml-rails'
+
 gem 'font-awesome-rails'
 
 gem 'jquery-turbolinks'
