@@ -4,8 +4,6 @@ class ApplicationController < ActionController::Base
   before_filter :set_sections
   protect_from_forgery with: :exception
 
-  @title = 'Home'
-
   def set_sections
     @sections = Section.all
   end
