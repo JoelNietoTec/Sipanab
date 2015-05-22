@@ -21,7 +21,7 @@
 }
 
 body {
-  background-image: url('/assets/white_carbonfiber.png');
+  background-image: url('white_carbonfiber.png');
 }
 
 .login-navbar {
