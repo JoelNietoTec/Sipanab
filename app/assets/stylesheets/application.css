@@ -21,7 +21,7 @@
 }
 
 body {
-  background-image: url('white_carbonfiber.png');
+  background-image: url(image_path("white_carbonfiber.png"));
 }
 
 .login-navbar {
