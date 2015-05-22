@@ -21,7 +21,7 @@
                 %span.icon-bar
               = link_to 'SIPANAB', root_url, class: 'navbar-brand'
             .collapse.navbar-collapse#bs-navbar-collapse
-              - if @section.any?
+              - if @sections
                 %ul.nav.navbar-nav
                   - @sections.each do |section|
                     %li
