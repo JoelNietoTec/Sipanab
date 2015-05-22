@@ -9,73 +9,74 @@
     = javascript_include_tag "application", 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    .navbar-wrapper
-      .container
-        %nav.navbar.navbar-default
-          .container
-            .navbar-header
-              %button.navbar-toggle.collapsed{'type' => "button", 'data-toggle' => "collapse", 'data-target' => "#bs-navbar-collapse" }
-                %span.sr-only Toggle navigation
-                %span.icon-bar
-                %span.icon-bar
-                %span.icon-bar
-              = link_to 'SIPANAB', root_url, class: 'navbar-brand'
-            .collapse.navbar-collapse#bs-navbar-collapse
-              - if @sections
-                %ul.nav.navbar-nav
-                  - @sections.each do |section|
-                    %li
-                      = link_to section.name.titleize, section
-              %ul.nav.navbar-nav.navbar-right
-                - if current_user
-                  %li.dropdown
-                    %a.dropdown-toggle{ 'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true" }
-                      = fa_icon 'dashboard'
-                      Administración
-                      %span.caret
-                    %ul.dropdown-menu{ :role => 'menu' }
+    .container
+      .navbar-wrapper
+        .container
+          %nav.navbar.navbar-default
+            .container
+              .navbar-header
+                %button.navbar-toggle.collapsed{'type' => "button", 'data-toggle' => "collapse", 'data-target' => "#bs-navbar-collapse" }
+                  %span.sr-only Toggle navigation
+                  %span.icon-bar
+                  %span.icon-bar
+                  %span.icon-bar
+                = link_to 'SIPANAB', root_url, class: 'navbar-brand'
+              .collapse.navbar-collapse#bs-navbar-collapse
+                - if @sections
+                  %ul.nav.navbar-nav
+                    - @sections.each do |section|
                       %li
-                        = link_to new_article_path do
-                          = fa_icon 'pencil'
-                          Nuevo Artículo
-                      %li
-                        = link_to wallpapers_path do
-                          = fa_icon 'file-image-o'
-                          Wallpapers
-                      %li
-                        = link_to sections_path do
-                          = fa_icon 'indent'
-                          Secciones
-                      %li
-                        = link_to documents_path do
-                          = fa_icon 'file-archive-o'
-                          Documentos
-                      %li
-                        = link_to users_path do
-                          = fa_icon 'users'
-                          Usuarios
-                      %li
-                        = link_to logout_path do
-                          = fa_icon 'sign-out'
-                          Cerrar Sesión
-                - else
-                  %li.dropdown
-                    %a.dropdown-toggle{'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true"}
-                      = fa_icon 'user'
-                      Login
-                      %span.caret
-                    .dropdown-menu.login-navbar
-                      %h3 Iniciar Sesión
-                      = minimal_form_for :sessions, :url => sessions_path, html: { autocomplete: 'off' } do |f|
-                        = f.input :username, placeholder: 'Nombre de Usuario', input_html: { class: 'input-sm' }
-                        = f.input :password, placeholder: 'Contraseña...', input_html: { class: 'input-sm' }
-                        = f.button :submit, "Entrar", class: 'btn-warning btn-block'
-              %ul.nav.navbar-nav.navbar-right
-                %li
-                  %a.facebook{ 'href' => 'https://www.facebook.com/sipanab', 'target' => "_blank" }
-                    = fa_icon 'facebook-official'
-                %li
-                  %a.twitter{ 'href' => 'https://twitter.com/sipanabpanama', 'target' => "_blank" }
-                    = fa_icon 'twitter-square'
+                        = link_to section.name.titleize, section
+                %ul.nav.navbar-nav.navbar-right
+                  - if current_user
+                    %li.dropdown
+                      %a.dropdown-toggle{ 'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true" }
+                        = fa_icon 'dashboard'
+                        Administración
+                        %span.caret
+                      %ul.dropdown-menu{ :role => 'menu' }
+                        %li
+                          = link_to new_article_path do
+                            = fa_icon 'pencil'
+                            Nuevo Artículo
+                        %li
+                          = link_to wallpapers_path do
+                            = fa_icon 'file-image-o'
+                            Wallpapers
+                        %li
+                          = link_to sections_path do
+                            = fa_icon 'indent'
+                            Secciones
+                        %li
+                          = link_to documents_path do
+                            = fa_icon 'file-archive-o'
+                            Documentos
+                        %li
+                          = link_to users_path do
+                            = fa_icon 'users'
+                            Usuarios
+                        %li
+                          = link_to logout_path do
+                            = fa_icon 'sign-out'
+                            Cerrar Sesión
+                  - else
+                    %li.dropdown
+                      %a.dropdown-toggle{'href' => "#", 'data-toggle' => "dropdown", 'role' => "button", 'aria-expanded' => "true"}
+                        = fa_icon 'user'
+                        Login
+                        %span.caret
+                      .dropdown-menu.login-navbar
+                        %h3 Iniciar Sesión
+                        = minimal_form_for :sessions, :url => sessions_path, html: { autocomplete: 'off' } do |f|
+                          = f.input :username, placeholder: 'Nombre de Usuario', input_html: { class: 'input-sm' }
+                          = f.input :password, placeholder: 'Contraseña...', input_html: { class: 'input-sm' }
+                          = f.button :submit, "Entrar", class: 'btn-warning btn-block'
+                %ul.nav.navbar-nav.navbar-right
+                  %li
+                    %a.facebook{ 'href' => 'https://www.facebook.com/sipanab', 'target' => "_blank" }
+                      = fa_icon 'facebook-official'
+                  %li
+                    %a.twitter{ 'href' => 'https://twitter.com/sipanabpanama', 'target' => "_blank" }
+                      = fa_icon 'twitter-square'
     = custom_bootstrap_flash
     = yield
