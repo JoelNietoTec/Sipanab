@@ -14,6 +14,6 @@ Rails.application.config.assets.version = '1.0'
   Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.css"]
 end
 
-  config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
+  config.assets.precompile += %w( glyphicons-halflings-regular.svg, glyphicons-halflings-regular.eot, glyphicons-halflings-regular.woff , glyphicons-halflings-regular.ttf )
 
-  config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
+  config.assets.precompile += %w( white_carbonfiber.png )
