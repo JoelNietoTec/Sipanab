@@ -13,3 +13,7 @@ Rails.application.config.assets.version = '1.0'
 %w( admin articles documents links sections users wallpapers welcome ).each do |controller|
   Rails.application.config.assets.precompile += ["#{controller}.js", "#{controller}.css"]
 end
+
+  config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
+
+  config.assets.precompile += %w( *.png *.jpg *.jpeg *.gif )
