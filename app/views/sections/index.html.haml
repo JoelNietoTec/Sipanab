@@ -1,23 +1,24 @@
-.col-lg-10.center-block.sections
-  %h1 Secciones
-  %table.table.table-bordered.table-hover.col-lg-10
-    %thead
-      %tr
-        %th Nombre
-        %th Enlace
-        %th Contenido
-        %th
-        %th
-        %th
-    %tbody
-      - @sections.each do |section|
+.container
+  .sections
+    %h1 Secciones
+    %table.table.table-bordered.table-hover.col-lg-10
+      %thead
         %tr
-          %td= section.name
-          %td= section.slug
-          %td= truncate(strip_tags(section.content), :length=>100)
-          %td= link_to 'Ver', section, :class => 'btn btn-sm btn-primary'
-          %td= link_to 'Editar', edit_section_path(section), :class => 'btn btn-sm btn-success'
-          %td= link_to 'Borrar', section, :class => 'btn btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Are you sure?' }
-  %br
+          %th Nombre
+          %th Enlace
+          %th Contenido
+          %th
+          %th
+          %th
+      %tbody
+        - @sections.each do |section|
+          %tr
+            %td= section.name
+            %td= section.slug
+            %td= truncate(strip_tags(section.content), :length=>100)
+            %td= link_to 'Ver', section, :class => 'btn btn-sm btn-primary'
+            %td= link_to 'Editar', edit_section_path(section), :class => 'btn btn-sm btn-success'
+            %td= link_to 'Borrar', section, :class => 'btn btn-sm btn-danger', :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %br
 
-  = link_to 'Nueva Sección', new_section_path, :class => 'btn btn-sm btn-warning'
+    = link_to 'Nueva Sección', new_section_path, :class => 'btn btn-sm btn-warning'
