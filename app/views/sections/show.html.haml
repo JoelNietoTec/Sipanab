@@ -1,11 +1,12 @@
-.container.section
-  .jumbotron
-    %h2
-      = @section.name
-    %p
-      = @section.content.html_safe
-    - if current_user
+.container
+  .section
+    .jumbotron
+      %h2
+        = @section.name
       %p
-        = link_to edit_section_path(@section), class: 'btn btn-warning btn-sm' do
-          = fa_icon 'pencil'
-          Editar
+        = @section.content.html_safe
+      - if current_user
+        %p
+          = link_to edit_section_path(@section), class: 'btn btn-warning btn-sm' do
+            = fa_icon 'pencil'
+            Editar
