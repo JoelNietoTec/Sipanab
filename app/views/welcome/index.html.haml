@@ -17,9 +17,9 @@
   %a.right.carousel-control{ :href => '#myCarousel', :role => 'button', 'data-slide' => 'next' }
     %span.glyphicon.glyphicon-chevron-right{'aria-hidden' => "true"}
 .container
-  .col-lg-9
+  %section.col-md-9
     - @articles.each do |article|
-      .col-lg-12
+      .col-md-12
         .panel.article
           .panel-body
             = link_to article do
@@ -35,7 +35,7 @@
                 = link_to tag_path(tag) do
                   %span.label.label-warning
                     = tag
-  .col-lg-3
+  %aside.col-md-3
     .widget-panel
       - if @documents.any?
         .panel.panel-warning

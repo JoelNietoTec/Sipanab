@@ -267,8 +267,8 @@ th {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('/assets/glyphicons-halflings-regular.eot');
-  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff2') format('woff2'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+  src: url(asset_path('glyphicons-halflings-regular.eot'));
+  src: url(asset_path('glyphicons-halflings-regular.eot?#iefix')) format('embedded-opentype'), url(asset_path('glyphicons-halflings-regular.woff2')) format('woff2'), url(asset_path('glyphicons-halflings-regular.woff')) format('woff'), url(asset_path('glyphicons-halflings-regular.ttf')) format('truetype'), url(asset_path('glyphicons-halflings-regular.svg#glyphicons_halflingsregular')) format('svg');
 }
 .glyphicon {
   position: relative;
@@ -4860,6 +4860,7 @@ a.badge:focus {
   color: inherit;
   background-color: #fafafa;
   border-radius: 7px;
+  border: 1px solid rgb(183, 183, 183);
 }
 
 .jumbotron p {
@@ -6578,8 +6579,8 @@ button.close {
 }
 .navbar {
   border: none;
-  font-size: 15px;
-  font-weight: 300;
+  font-size: 17px;
+  font-weight: 400;
 }
 .navbar .navbar-toggle:hover .icon-bar {
   background-color: #b3b3b3;
