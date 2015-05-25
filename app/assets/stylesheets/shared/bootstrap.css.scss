@@ -3348,7 +3348,7 @@ fieldset[disabled] .btn-link:focus {
   padding: 16px 20px;
   font-size: 19px;
   line-height: 1.3333333;
-  border-radius: 0;
+  border-radius: 6px;
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -6747,8 +6747,8 @@ label,
 .help-block,
 .checkbox,
 .radio {
-  font-size: 12px;
-  font-weight: normal;
+  font-size: 16px;
+  font-weight: bold;
 }
 input[type="radio"],
 input[type="checkbox"] {
