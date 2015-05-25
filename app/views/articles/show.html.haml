@@ -1,14 +1,15 @@
 .container
-  %article.article-container
-    %h2.content-title
-      = @article.title
-      - if current_user
-        = link_to edit_article_path(@article), :class => 'btn btn-warning' do
-          Editar
+  .row
+    %article.article-container
+      %h2.content-title
+        = @article.title
+        - if current_user
+          = link_to edit_article_path(@article), :class => 'btn btn-warning' do
+            Editar
 
-    - @article.tag_list.each do |tag|
-      = link_to tag_path(tag) do
-        %span.label.label-warning
-          = tag
-    .content
-      = @article.content.html_safe
+      - @article.tag_list.each do |tag|
+        = link_to tag_path(tag) do
+          %span.label.label-warning
+            = tag
+      .content
+        = @article.content.html_safe
