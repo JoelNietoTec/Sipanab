@@ -6,6 +6,7 @@
       %thead
         %tr
           %th.centered Usuario
+          %th.centered Usuario
           %th.centered Contraseña
           %th
           %th
@@ -14,6 +15,7 @@
         - @users.each do |user|
           %tr
             %td.centered= user.username
+            %th.centered= user.full_name
             %td.centered= '******'
             %td.centered= link_to 'Editar', edit_user_path(user), :class => 'btn btn-primary btn-xs'
             %td.centered= link_to 'Borrar', user, :class => 'btn btn-danger btn-xs', :method => :delete, :data => { :confirm => 'Are you sure?' }
