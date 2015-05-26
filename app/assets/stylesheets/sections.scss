@@ -13,3 +13,14 @@
   padding: 30px;
   border: 1px solid rgb(183, 183, 183);
 }
+
+
+@media (max-width: 768px) {
+	.jumbotron, .sections {
+    padding: 10px;
+    margin-top: 75px;
+	}
+  img {
+    width: 100%;
+  }
+}

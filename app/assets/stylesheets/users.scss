@@ -8,3 +8,13 @@
   padding: 30px;
   border-radius: 5px;
 }
+
+@media (max-width: 768px) {
+	.user {
+    padding: 10px;
+    margin-top: 75px;
+	}
+  img {
+    width: 100%;
+  }
+}

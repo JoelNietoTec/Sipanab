@@ -18,3 +18,13 @@ textarea {
 .thumbnail {
   height: 75px;
 }
+
+@media (max-width: 768px) {
+	.images {
+    padding: 10px;
+    margin-top: 75px;
+	}
+  img {
+    width: 100%;
+  }
+}
