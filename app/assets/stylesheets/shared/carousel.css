@@ -42,6 +42,12 @@ body {
   height: 500px;
   margin-bottom: 20px;
 }
+
+@media (max-width: 768px) {
+	.carousel {
+    height: 300px
+	}
+}
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
