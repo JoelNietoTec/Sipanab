@@ -5,21 +5,20 @@
       - if current_user
         = link_to edit_article_path(@article), :class => 'btn btn-warning btn-sm' do
           Editar
-    %p
-      %a.btn.btn-twitter.btn-sm{ :href => "https://twitter.com/share", 'data-hashtags' => "FuerzaSIPANAB" }
-        = fa_icon 'twitter'
-        Tweet
-      %script
-        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-      %a.btn.btn-sm.btn-facebook{ :href => 'https://www.facebook.com/sharer/sharer.php?u=' }
-        = fa_icon 'facebook'
-        Like
     %p.text-muted
       = fa_icon 'user'
       = User.find(@article.user_id).full_name
       \|
       = fa_icon 'calendar'
       = @article.created_at.strftime("%d/%m/%y")
+      %a.btn.btn-twitter.btn-xs{ :href => "https://twitter.com/share", 'data-hashtags' => "FuerzaSIPANAB" }
+        = fa_icon 'twitter'
+        Tweet
+      %script
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      %a.btn.btn-xs.btn-facebook{ :href => 'https://www.facebook.com/sharer/sharer.php?u=' }
+        = fa_icon 'facebook'
+        Like
     %p
       - @article.tag_list.each do |tag|
         = link_to tag_path(tag) do
@@ -27,3 +26,12 @@
             = tag
     .content
       = @article.content.html_safe
+    %p
+      %a.btn.btn-twitter.btn-xs{ :href => "https://twitter.com/share", 'data-hashtags' => "FuerzaSIPANAB" }
+        = fa_icon 'twitter'
+        Tweet
+      %script
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+      %a.btn.btn-xs.btn-facebook{ :href => 'https://www.facebook.com/sharer/sharer.php?u=' }
+        = fa_icon 'facebook'
+        Like
