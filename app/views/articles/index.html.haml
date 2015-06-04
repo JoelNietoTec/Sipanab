@@ -1,7 +1,6 @@
-.col-lg-10.center-block.articles
-  .panel
-    .panel-body
-      %h1.text-warning Artículos
+.container
+  .panel.article-title
+    %h1.text-warning Artículos
 
   = link_to 'Nuevo Artículo', new_article_path, :class => 'btn btn-sm btn-warning' if current_user
 
