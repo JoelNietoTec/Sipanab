@@ -29,6 +29,10 @@
   border: 1px solid rgb(183, 183, 183);
 }
 
+p > img {
+  margin: 10px;
+}
+
 @media (max-width: 768px) {
 	.article-container, .article-form, .articles, .article-title {
     padding: 10px;
@@ -42,3 +46,4 @@
 .social-buttons {
   padding: 15px 0 15px 35px;
 }
+

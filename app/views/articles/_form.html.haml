@@ -3,7 +3,7 @@
 
   .form-inputs
     = f.input :title, label: 'Título'
-    = f.input :content, as: :bootsy, label: 'Contenido'
+    = f.input :content, as: :summernote, label: 'Contenido'
     = f.input :tag_list, input_html: { data:{ role:'tagsinput' }, value: @article.tag_list.join(",") }, placeholder: 'Etiquetas separadas por coma...', label: 'Etiquetas'
     = f.hidden_field :user_id, :value => current_user.id
     = f.input :important
