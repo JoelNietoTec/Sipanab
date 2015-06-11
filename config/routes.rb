@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :images, :path => :fotos
   resources :links
   resources :documents, :path => :documentos
 

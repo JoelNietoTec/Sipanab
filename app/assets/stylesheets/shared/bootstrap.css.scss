@@ -1470,8 +1470,9 @@ abbr[data-original-title] {
 blockquote {
   padding: 10.5px 21px;
   margin: 0 0 21px;
-  font-size: 18.75px;
+  font-size: 14px;
   border-left: 5px solid #dddddd;
+  font-style: italic;
 }
 blockquote p:last-child,
 blockquote ul:last-child,
@@ -4891,12 +4892,12 @@ a.badge:focus {
 }
 .thumbnail {
   display: block;
-  padding: 4px;
+  padding: 5px;
   margin-bottom: 21px;
   line-height: 1.4;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 0;
+  border-radius: 5px;
   -webkit-transition: border 0.2s ease-in-out;
   -o-transition: border 0.2s ease-in-out;
   transition: border 0.2s ease-in-out;

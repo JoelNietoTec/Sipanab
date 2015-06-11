@@ -37,6 +37,10 @@
                     - @sections.each do |section|
                       %li
                         = link_to section.name.titleize, section
+                    %li
+                      = link_to images_path do
+                        = fa_icon 'picture-o'
+                        Galería
                 %ul.nav.navbar-nav.navbar-right
                   - if current_user
                     %li.dropdown
