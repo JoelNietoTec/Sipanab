@@ -6,7 +6,7 @@
       - @images.each do |image|
         .col-lg-3
           .thumbnail
-            %a{ :href => image.picture.url, 'data-toggle' => "lightbox", 'data-gallery' => "multiimages", 'data-title' => image.caption }
+            %a{ :href => image.picture.url, 'data-toggle' => "lightbox", 'data-gallery' => "multiimages", 'data-title' => image.caption, 'data-footer' => image.created_at.strftime("%d/%m/%y") }
               = image_tag image.picture.url(:thumb), :class => 'img-responsive'
             - if current_user
               .caption.thumbnail-btn
