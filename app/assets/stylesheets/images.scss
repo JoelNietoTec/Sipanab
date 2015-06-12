@@ -22,22 +22,3 @@ img {
     margin-top: 75px;
 	}
 }
-
-.thumbnail > .thumbnail-btn {
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  -webkit-transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-}
-
-.thumbnail:hover > .thumbnail-btn {
-  height: auto;
-  opacity: 1;
-  -webkit-transition: all 1s ease-out;
-  -moz-transition: all 1s ease-out;
-  -o-transition: all 1s ease-out;
-  transition: all 1s ease-out;
-}
