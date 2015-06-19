@@ -29,7 +29,7 @@ class WallpapersController < ApplicationController
 
     respond_to do |format|
       if @wallpaper.save
-        format.html { redirect_to wallpaper_url, notice: 'Wallpaper was successfully created.' }
+        format.html { redirect_to wallpapers_url, notice: 'Wallpaper was successfully created.' }
         format.json { render :show, status: :created, location: @wallpaper }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class WallpapersController < ApplicationController
   def update
     respond_to do |format|
       if @wallpaper.update(wallpaper_params)
-        format.html { redirect_to wallpaper_url, notice: 'Wallpaper was successfully updated.' }
+        format.html { redirect_to wallpapers_url, notice: 'Wallpaper was successfully updated.' }
         format.json { render :show, status: :ok, location: @wallpaper }
       else
         format.html { render :edit }
