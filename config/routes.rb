@@ -19,13 +19,11 @@ Rails.application.routes.draw do
 
   get 'articulos/tags/:tag', to: 'articles#index', as: :tag
 
-  root 'welcome#index'
+  root :to => 'welcome#index'
 
   resources :sessions
 
   get 'documents/download'
-
-  get 'admin' => 'admin#index', as: :admin
 
   get 'login' => 'sessions#create', as: :login
 
