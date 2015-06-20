@@ -242,7 +242,6 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   font-awesome-rails
   friendly_id (~> 5.1.0)
-  haml
   haml-rails
   jbuilder (~> 2.0)
   jquery-rails
