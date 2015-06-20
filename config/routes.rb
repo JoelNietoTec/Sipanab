@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'articulos/tags/:tag', to: 'articles#index', as: :tag
 
-  root :to => 'welcome#index'
+  root 'welcome#index'
 
   resources :sessions
 
