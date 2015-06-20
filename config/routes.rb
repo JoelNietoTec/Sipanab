@@ -11,8 +11,6 @@ Rails.application.routes.draw do
 
   resources :articles, :path => :articulos
 
-  mount Bootsy::Engine => '/bootsy', as: 'bootsy'
-
   resources :sections, :path => :secciones
 
   get 'welcome/index'
