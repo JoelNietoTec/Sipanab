@@ -1,0 +1,26 @@
+// Place all the styles related to the Sections controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.jumbotron {
+  margin-top: 100px;
+}
+
+.sections {
+  margin-top: 100px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 30px;
+  border: 1px solid rgb(183, 183, 183);
+}
+
+
+@media (max-width: 768px) {
+	.jumbotron, .sections {
+    padding: 10px;
+    margin-top: 75px;
+	}
+  img {
+    width: 100%;
+  }
+}

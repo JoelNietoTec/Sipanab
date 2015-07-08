@@ -1,0 +1,70 @@
+#myCarousel.carousel.slide{ 'data-ride' => 'carousel' }
+  %ol.carousel-indicators
+    - @wallpapers.each_with_index do |wallpaper, index|
+      %li{ :class => ( "active" unless index > 0 ), 'data-target' => '#myCarousel', 'data-slide' => index }
+  .carousel-inner{ :role => 'listbox'}
+    - @wallpapers.each_with_index do |wallpaper, index|
+      .item{ :class => ( "active" unless index > 0 ) }
+        = image_tag wallpaper.image.url(:background)
+        .container
+          .carousel-caption
+            %h1
+              = wallpaper.title
+            %p
+              = wallpaper.content.html_safe
+  %a.left.carousel-control{ :href => '#myCarousel', :role => 'button', 'data-slide' => 'prev' }
+    %span.glyphicon.glyphicon-chevron-left{'aria-hidden' => "true"}
+  %a.right.carousel-control{ :href => '#myCarousel', :role => 'button', 'data-slide' => 'next' }
+    %span.glyphicon.glyphicon-chevron-right{'aria-hidden' => "true"}
+.container
+  .row
+    %section.col-md-9
+      - @articles.each do |article|
+        .col-md-12
+          .panel.article
+            .panel-body
+              = link_to article do
+                %h3.text-warning
+                  = article.title.titleize
+                %p.text-muted
+                  = fa_icon 'user'
+                  = User.find(article.user_id).full_name
+                  \|
+                  = fa_icon 'calendar'
+                  = article.created_at.strftime("%d/%m/%y")
+              %p
+                = truncate(strip_tags(article.content), :length => 300)
+                = link_to 'Ver Más', article, :class => 'btn btn-warning'
+            .panel-footer
+              %p.text-warning
+                = fa_icon 'tags'
+                - article.tag_list.each do |tag|
+                  = link_to tag_path(tag) do
+                    %span.label.label-warning
+                      = tag
+    %aside.col-md-3
+      .widget-panel
+        - if @documents.any?
+          .panel.panel-warning
+            .panel-heading
+              %h4.panel-title
+                = fa_icon 'file-text-o'
+                Documentos
+            .panel-body
+              - @documents.each do |doc|
+                %p
+                  = link_to File.basename(doc.doc_file.path), doc.doc_file.url
+              = link_to 'Ver Todos', documents_path, :class => 'btn btn-xs btn-warning'
+        %h4.text-info
+          = fa_icon 'twitter'
+          Twitter
+        %a.col-sm-12.twitter-timeline{ :href => "https://twitter.com/sipanabpanama", 'data-widget-id' => "597040768340004864"}
+          Tweets por @sipanabpanama.
+        %script
+          !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+        %h4.text-success
+          = fa_icon 'cloud'
+          Clima
+        %a.col-sm-12.aw-widget-legal{ :href => "http://www.accuweather.com/es/pa/panama-city/259549/weather-forecast/259549"}
+        #awcc1431184094899.aw-widget-current{ 'data-locationkey' => "", 'data-unit' => "c", 'data-language' => "es", 'data-useip' => "true", 'data-uid' => "awcc1431184094899" }
+        %script{'type' => "text/javascript", 'src' => "http://oap.accuweather.com/launch.js"}

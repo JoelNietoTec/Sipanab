@@ -1,0 +1,25 @@
+.container
+  .user
+    %h1 Usuarios
+
+    %table.table.table-hover.table-hover.table-condensed.table-bordered.table-responsive
+      %thead
+        %tr
+          %th.centered Usuario
+          %th.centered Usuario
+          %th.centered Contraseña
+          %th
+          %th
+
+      %tbody
+        - @users.each do |user|
+          %tr
+            %td.centered= user.username
+            %th.centered= user.full_name
+            %td.centered= '******'
+            %td.centered= link_to 'Editar', edit_user_path(user), :class => 'btn btn-primary btn-xs'
+            %td.centered= link_to 'Borrar', user, :class => 'btn btn-danger btn-xs', :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+    %br
+
+    = link_to 'Nuevo Usuario', new_user_path, :class => 'btn btn-warning'

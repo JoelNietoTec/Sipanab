@@ -1,0 +1,20 @@
+.container
+  .panel.article-title
+    %h1.text-warning Artículos
+
+  = link_to 'Nuevo Artículo', new_article_path, :class => 'btn btn-sm btn-warning' if current_user
+
+  - @articles.each do |article|
+    .panel
+      .panel-body
+        %h2.text-warning= article.title
+        %p
+          = truncate(strip_tags(article.content), :length => 200)
+          = link_to 'Ver Más', article, :class => 'btn btn-sm btn-warning'
+      .panel-footer
+        %p.text-warning
+          = fa_icon 'tags'
+          - article.tag_list.each do |tag|
+            = link_to tag_path(tag) do
+              %span.label.label-warning
+                = tag

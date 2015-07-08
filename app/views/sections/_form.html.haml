@@ -1,0 +1,8 @@
+= simple_form_for(@section) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :name, label: 'Nombre'
+    = f.input :content, as: :summernote, label: 'Contenido'
+
+  .form-action
+    = f.button :submit
