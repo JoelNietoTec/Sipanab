@@ -1,13 +1,17 @@
 
 .container
   .gallery
-    %h3 Galería
+    %h2 Galería
+    - if current_user
+      = link_to 'Agregar Imagen', new_image_path, :class => 'btn btn-warning'
+    %br
+    %br
     #myLightbox.row
       - @images.each do |image|
-        .col-lg-3
+        .col-lg-4
           .thumbnail
             %a{ :href => image.picture.url, 'data-toggle' => "lightbox", 'data-gallery' => "multiimages", 'data-title' => image.caption, 'data-footer' => image.created_at.strftime("%d/%m/%y") }
-              = image_tag image.picture.url(:thumb), :class => 'img-responsive'
+              = image_tag image.picture.url(:medium), :class => 'img-responsive'
             - if current_user
               .caption.thumbnail-btn
                 = link_to edit_image_path(image) do
@@ -18,5 +22,3 @@
                   .btn.btn-xs.btn-danger
                     = fa_icon 'trash-o'
                     Borrar
-    - if current_user
-      = link_to 'Agregar Imagen', new_image_path, :class => 'btn btn-warning'
