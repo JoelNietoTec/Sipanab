@@ -4,6 +4,7 @@
   .form-inputs
     = f.input :title
     = f.input :content, as: :summernote
+    = f.input :tag_list, input_html: { data:{ role:'tagsinput' }, value: @post.tag_list.join(",") }, placeholder: 'Etiquetas separadas por coma...', label: 'Etiquetas'
     = f.input :authorized
     = f.association :user
 

@@ -1,7 +1,4 @@
-%h1 Editing post
-
-= render 'form'
-
-= link_to 'Show', @post
-\|
-= link_to 'Back', posts_path
+.container
+	.posts.post-form
+		%h3.text-warning Editar Post
+		= render 'form'

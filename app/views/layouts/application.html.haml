@@ -85,6 +85,7 @@
                           = f.input :username, placeholder: 'Nombre de Usuario', input_html: { class: 'input-sm' }
                           = f.input :password, placeholder: 'Contraseña...', input_html: { class: 'input-sm' }
                           = f.button :submit, "Entrar", class: 'btn-warning btn-block'
+                          = link_to "Registrarse", new_user_path, class: 'btn btn-primary btn-block'
                 %ul.nav.navbar-nav.navbar-right
                   %li
                     %a.facebook{ 'href' => 'https://www.facebook.com/sipanab', 'target' => "_blank" }

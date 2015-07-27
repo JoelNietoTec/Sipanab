@@ -22,6 +22,9 @@ Rails.application.routes.draw do
 
   resources :sessions
 
+  get 'users/:id/change_password', to: 'users#change_password', as: :change_password
+  post 'users/:id/change_password', to: 'users#update_password', as: :update_password
+
   get 'documents/download'
 
   get 'login' => 'sessions#create', as: :login
