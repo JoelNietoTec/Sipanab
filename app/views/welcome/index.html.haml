@@ -68,3 +68,12 @@
         %a.col-sm-12.aw-widget-legal{ :href => "http://www.accuweather.com/es/pa/panama-city/259549/weather-forecast/259549"}
         #awcc1431184094899.aw-widget-current{ 'data-locationkey' => "", 'data-unit' => "c", 'data-language' => "es", 'data-useip' => "true", 'data-uid' => "awcc1431184094899" }
         %script{'type' => "text/javascript", 'src' => "http://oap.accuweather.com/launch.js"}
+        <!--Currency Converter widget by FreeCurrencyRates.com -->
+        #gcw_mainFB7bo8A4O.gcw_mainFB7bo8A4O
+        %a#gcw_siteFB7bo8A4O{ :href =>  "http://freecurrencyrates.com/en/"} FreeCurrencyRates.com
+        %script
+          function reloadFB7bo8A4O(){ var sc = document.getElementById("scFB7bo8A4O");if (sc) sc.parentNode.removeChild(sc);sc = document.createElement("script");sc.type = "text/javascript";sc.charset = "UTF-8";sc.async = true;sc.id="scFB7bo8A4O";sc.src = "http://freecurrencyrates.com/es/widget-vertical-editable?iso=USDEURARSVEFCOPBRLCRCCLPMXNXUL&df=2&p=FB7bo8A4O&v=fits&source=yahoo&width=245&width_title=0&firstrowvalue=1&thm=dddddd,eeeeee,E78F08,F6A828,FFFFFF,cccccc,ffffff,1C94C4,000000&tzo="+(new Date()).getTimezoneOffset();var div = document.getElementById("gcw_mainFB7bo8A4O");div.parentNode.insertBefore(sc, div);} reloadFB7bo8A4O();
+        <!-- put custom styles here: .gcw_mainFB7bo8A4O{width: 100%;}, .gcw_headerFB7bo8A4O{}, .gcw_ratesFB7bo8A4O{}, .gcw_sourceFB7bo8A4O{} -->
+        <!--End of Currency Converter widget by FreeCurrencyRates.com -->
+      %style
+        .gcw_mainFB7bo8A4O{ width: "100%" }

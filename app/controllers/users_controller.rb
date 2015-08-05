@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_login
+  before_action :set_user, only: [:show, :edit, :change_password, :update, :destroy]
+  before_action :require_login, except: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -20,6 +20,21 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
+  end
+
+  def change_password
+  end
+
+  def update_password
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to root_url, notice: 'Password Actualizado' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :change_password }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /users
@@ -70,6 +85,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation, :full_name)
+      params.require(:user).permit(:username, :password, :password_confirmation, :full_name, :admin)
     end
 end

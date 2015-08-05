@@ -15,12 +15,15 @@
 }
 
 
+
+
 @media (max-width: 768px) {
 	.jumbotron, .sections {
     padding: 10px;
     margin-top: 75px;
 	}
   img {
-    width: 100%;
+    width: 100% !important;
+    height: 100% !important;
   }
 }
