@@ -21,10 +21,10 @@ class SessionsController < ApplicationController
 
   private
   def set_user
-    @user = login(params[:sessions][:username], params[:sessions][:password])
+    @user = login(params[:sessions][:email], params[:sessions][:password])
   end
 
   def session_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:email, :password)
   end
 end

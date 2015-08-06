@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150726032003) do
+ActiveRecord::Schema.define(version: 20150729023208) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",      limit: 255
@@ -117,7 +117,7 @@ ActiveRecord::Schema.define(version: 20150726032003) do
   add_index "tags", ["name"], name: "index_tags_on_name", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "username",         limit: 255, null: false
+    t.string   "email",            limit: 255, null: false
     t.string   "crypted_password", limit: 255
     t.string   "salt",             limit: 255
     t.datetime "created_at"
@@ -126,7 +126,7 @@ ActiveRecord::Schema.define(version: 20150726032003) do
     t.boolean  "admin",            limit: 1
   end
 
-  add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
   create_table "wallpapers", force: :cascade do |t|
     t.string   "title",      limit: 255
